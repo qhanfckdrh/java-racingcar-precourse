@@ -6,9 +6,10 @@ public class Car {
     private String name;
     private int position;
 
-    public void setName(String name){
+    public Car(String name, int value){
         validateName(name);
         this.name = name;
+        this.position = value;
     }
 
     private void validateName(String name){

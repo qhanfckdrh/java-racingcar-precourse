@@ -32,6 +32,14 @@ public class ApplicationTest extends NSTest {
         });
     }
 
+    @Test
+    void 이름에_길이에_대한_예외_처리() {
+        assertSimpleTest(() -> {
+            run("pobiiii,woniiii", "1");
+            verify(ERROR_MESSAGE);
+        });
+    }
+
     @AfterEach
     void tearDown() {
         outputStandard();

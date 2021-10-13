@@ -13,9 +13,7 @@ public class Player {
 
         String[] splited = players.split(",");
         for (int i=0; i<splited.length; i++){
-            Car newCar = new Car();
-            newCar.setName(splited[i]);
-            newCar.setPosition(0);
+            Car newCar = new Car(splited[i], 0);
             this.players.add(newCar);
         }
     }
@@ -66,6 +64,4 @@ public class Player {
             sb.append(",");
         }
     }
-
-
 }

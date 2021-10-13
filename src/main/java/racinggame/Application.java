@@ -8,7 +8,7 @@ import racinggame.view.Message;
 import java.io.IOException;
 
 public class Application {
-    private static final int TIMEOUT_SECOND = 2000;
+    private static final int TIMEOUT_SECOND = 3000;
 
     public static void main(String[] args) {
         Message.printMessage(Message.GET_CAR_NAME);
@@ -30,9 +30,10 @@ public class Application {
 
     private static String readAndValidate(){
         String input;
+
         try {
+            Thread.sleep(TIMEOUT_SECOND);
             if (System.in.available() == 0){
-                Thread.sleep(TIMEOUT_SECOND);
                 Message.printMessage(Message.ERROR + "값을 빨리 입력 해주세요.");
             }
             input = Console.readLine();
